@@ -7,41 +7,30 @@
   "category": "widgets",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
-  "example": {},
+  "example": {
+    "attributes": {
+      "cards": [
+        {
+          "title": "Card 1",
+          "content": "This is card 1"
+        },
+        {
+          "title": "Card 2",
+          "content": "This is card 2"
+        }
+      ]
+    }
+  },
   "attributes": {
-    "enableNavigation": {
-      "type": "boolean"
-    },
-    "enablePagination": {
-      "type": "boolean"
-    },
-    "autoplay": {
-      "type": "boolean",
-      "default": false
-    },
-    "slides": {
+    "cards": {
       "type": "array",
       "default": [],
-      "items": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          },
-          "image": {
-            "type": "object",
-            "properties": {
-              "url": {
-                "type": "string"
-              },
-              "alt": {
-                "type": "string"
-              }
-            }
-          }
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
         }
       }
     }

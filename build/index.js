@@ -32,6 +32,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 // import Swiper core and required modules
 
 
@@ -46,43 +47,63 @@ function Edit({
   setAttributes
 }) {
   const {
-    enableNavigation,
-    enablePagination
+    cards
   } = attributes;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Slider Settings', 'swiper-block')
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    checked: !!enableNavigation,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enable Navigation', 'swiper-block'),
-    onChange: () => {
+  const handleTitleChange = (newTitle, index) => {
+    const updatedCards = [...cards];
+    updatedCards[index].title = newTitle;
+    setAttributes({
+      cards: updatedCards
+    });
+  };
+  const handleContentChange = (newContent, index) => {
+    const updatedCards = [...cards];
+    updatedCards[index].content = newContent;
+    setAttributes({
+      cards: updatedCards
+    });
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    onClick: () => {
+      const newCard = {
+        title: '',
+        content: ''
+      };
       setAttributes({
-        enableNavigation: !enableNavigation
+        cards: [...cards, newCard]
       });
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    checked: !!enablePagination,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enable Pagination', 'swiper-block'),
-    onChange: () => {
-      setAttributes({
-        enablePagination: !enablePagination
-      });
-    }
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.Swiper, {
+  }, "Add Card"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.Swiper, {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
     // install Swiper modules
-    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.A11y],
-    spaceBetween: 50,
-    slidesPerView: 3,
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.A11y],
+    spaceBetween: 0,
+    slidesPerView: 4,
     navigation: true,
-    pagination: {
-      clickable: true
-    },
-    scrollbar: {
-      draggable: true
-    },
     onSwiper: swiper => console.log(swiper),
     onSlideChange: () => console.log('slide change')
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, null, "Slide 1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, null, "Slide 2"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, null, "Slide 3"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, null, "Slide 4"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, null, "Slide 5"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, null, "Slide 6"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, null, "Slide 7")));
+  }, cards.map((card, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
+    key: index
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "h3",
+    value: card.title,
+    allowedFormats: ['core/bold', 'core/italic'],
+    onChange: newTitle => handleTitleChange(newTitle, index),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card Title...')
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "p",
+    value: card.content,
+    allowedFormats: ['core/bold', 'core/italic'],
+    onChange: newContent => handleContentChange(newContent, index),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card Content...')
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    width: "13px",
+    height: "13px",
+    class: "Icon___StyledIconSvg-sc-1nk0uws-1 jhmZwX",
+    viewBox: "0 0 24 24"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M6 5.122 12.877 12 6 18.878 8.123 21l8.998-9-8.998-9z"
+  })))))));
 }
 
 /***/ }),
@@ -11342,7 +11363,7 @@ SwiperSlide.displayName = 'SwiperSlide';
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/swiper-block","version":"0.1.0","title":"Swiper Block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"attributes":{"enableNavigation":{"type":"boolean"},"enablePagination":{"type":"boolean"},"autoplay":{"type":"boolean","default":false},"slides":{"type":"array","default":[],"items":{"type":"object","properties":{"title":{"type":"string"},"content":{"type":"string"},"image":{"type":"object","properties":{"url":{"type":"string"},"alt":{"type":"string"}}}}}}},"supports":{"html":false},"textdomain":"swiper-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/swiper-block","version":"0.1.0","title":"Swiper Block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{"attributes":{"cards":[{"title":"Card 1","content":"This is card 1"},{"title":"Card 2","content":"This is card 2"}]}},"attributes":{"cards":{"type":"array","default":[],"properties":{"title":{"type":"string"},"content":{"type":"string"}}}},"supports":{"html":false},"textdomain":"swiper-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

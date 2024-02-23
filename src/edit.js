@@ -1,7 +1,8 @@
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, RichText, useBlockProps } from '@wordpress/block-editor';
-import { PanelBody, ToggleControl } from '@wordpress/components';
+import { Button, PanelBody, ToggleControl } from '@wordpress/components';
 import './editor.scss';
+
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
@@ -14,57 +15,72 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { enableNavigation, enablePagination } = attributes;
+	const { cards } = attributes;
+
+	const handleTitleChange = (newTitle, index) => {
+		const updatedCards = [...cards];
+		updatedCards[index].title = newTitle;
+		setAttributes({ cards: updatedCards });
+	};
+
+	const handleContentChange = (newContent, index) => {
+		const updatedCards = [...cards];
+		updatedCards[index].content = newContent;
+		setAttributes({ cards: updatedCards });
+	};
+
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody
-					title={__('Slider Settings', 'swiper-block')}
-				>
-					<ToggleControl
-						checked={!!enableNavigation}
-						label={__(
-							'Enable Navigation',
-							'swiper-block'
-						)}
-						onChange={() => {
+				<PanelBody>
+					<Button
+						onClick={() => {
+							const newCard = {
+								title: '',
+								content: ''
+							};
 							setAttributes({
-								enableNavigation: !enableNavigation
-							})
+								cards: [...cards, newCard]
+							});
 						}}
-					/>
-					<ToggleControl
-						checked={!!enablePagination}
-						label={__(
-							'Enable Pagination',
-							'swiper-block'
-						)}
-						onChange={() => {
-							setAttributes({
-								enablePagination: !enablePagination
-							})
-						}}
-					/>
+					>
+						Add Card
+					</Button>
 				</PanelBody>
 			</InspectorControls>
-			<Swiper {...useBlockProps()}
+			<Swiper
+				{...useBlockProps()}
 				// install Swiper modules
-				modules={[Navigation, Pagination, Scrollbar, A11y]}
-				spaceBetween={50}
-				slidesPerView={3}
+				modules={[Navigation, A11y]}
+				spaceBetween={0}
+				slidesPerView={4}
 				navigation
-				pagination={{ clickable: true }}
-				scrollbar={{ draggable: true }}
 				onSwiper={(swiper) => console.log(swiper)}
 				onSlideChange={() => console.log('slide change')}
 			>
-				<SwiperSlide>Slide 1</SwiperSlide>
-				<SwiperSlide>Slide 2</SwiperSlide>
-				<SwiperSlide>Slide 3</SwiperSlide>
-				<SwiperSlide>Slide 4</SwiperSlide>
-				<SwiperSlide>Slide 5</SwiperSlide>
-				<SwiperSlide>Slide 6</SwiperSlide>
-				<SwiperSlide>Slide 7</SwiperSlide>
+				{
+					cards.map((card, index) => (
+						<SwiperSlide key={index}>
+							<div>
+								<RichText
+									tagName="h3"
+									value={card.title}
+									allowedFormats={['core/bold', 'core/italic']}
+									onChange={(newTitle) => handleTitleChange(newTitle, index)}
+									placeholder={__('Card Title...')}
+								/>
+								<RichText
+									tagName="p"
+									value={card.content}
+									allowedFormats={['core/bold', 'core/italic']}
+									onChange={(newContent) => handleContentChange(newContent, index)}
+									placeholder={__('Card Content...')}
+								/>
+								<svg width="13px" height="13px" class="Icon___StyledIconSvg-sc-1nk0uws-1 jhmZwX" viewBox="0 0 24 24"><path d="M6 5.122 12.877 12 6 18.878 8.123 21l8.998-9-8.998-9z"></path></svg>
+							</div>
+						</SwiperSlide>
+					))
+				}
 			</Swiper>
 		</>
 	);
