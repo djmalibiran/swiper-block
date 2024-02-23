@@ -22,4 +22,8 @@
   box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 12px;
 }
 
+.swiper-slide .card-body {
+  padding: 16px;
+}
+
 /*# sourceMappingURL=style-index.css.map*/
