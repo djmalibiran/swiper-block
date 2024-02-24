@@ -30,19 +30,20 @@ const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   loop: false,
   slidesPerView: 1,
-  spaceBetween: 0,
+  spaceBetween: 16,
   breakpoints: {
+    480: {
+      slidesPerView: 2
+    },
     640: {
-      slidesPerView: 2,
-      spaceBetween: 0
+      slidesPerView: 2
     },
     768: {
-      slidesPerView: 3,
-      spaceBetween: 0
+      slidesPerView: 3
     },
     1024: {
       slidesPerView: 4,
-      spaceBetween: 0
+      spaceBetween: 16
     }
   },
   // Navigation arrows

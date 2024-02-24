@@ -7,74 +7,75 @@
 
 <?php
 if ( ! empty( $attributes['swiper_cards'] ) ) {
-	echo 'whatup';
+	echo 'wtf';
 }
 ?>
 
 <div <?php echo get_block_wrapper_attributes(); ?>>
-<!-- Slider main container -->
-<div class="swiper">
-	<!-- Additional required wrapper -->
-	<div class="swiper-wrapper">
-		<!-- Slides -->
-		<div class="swiper-slide">
-			<div class="swiper-slide-wrapper">
-				<h3>Body Scan</h3>
-				<img src="http://localhost:8888/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-2.webp" alt="" width="100%" height="auto">
-				<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
-				<a href="#" title="Some title">Learn more</a>
+	<!-- Slider main container -->
+	<div class="swiper">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+			<!-- Slides -->
+			<div class="swiper-slide">
+				<div class="swiper-slide-wrapper">
+					<h3>Body Scan</h3>
+					<img src="http://goforward-block.local/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-1.webp" alt="" width="100%" height="auto">
+					<div class="swiper-slide-content-wrapper">
+						<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
+						<a href="#" title="Some title">Learn more</a>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="swiper-slide">
-			<div class="swiper-slide-wrapper">
-				<h3>Body Scan</h3>
-				<img src="http://localhost:8888/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-2.webp" alt="" width="100%" height="auto">
-				<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
-				<a href="#" title="Some title">Learn more</a>
+			<div class="swiper-slide">
+				<div class="swiper-slide-wrapper">
+					<h3>Body Scan</h3>
+					<img src="http://goforward-block.local/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-1.webp" alt="" width="100%" height="auto">
+					<div class="swiper-slide-content-wrapper">
+						<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
+						<a href="#" title="Some title">Learn more</a>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="swiper-slide">
-			<div class="swiper-slide-wrapper">
-				<h3>Body Scan</h3>
-				<img src="http://localhost:8888/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-2.webp" alt="" width="100%" height="auto">
-				<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
-				<a href="#" title="Some title">Learn more</a>
+			<div class="swiper-slide">
+				<div class="swiper-slide-wrapper">
+					<h3>Body Scan</h3>
+					<img src="http://goforward-block.local/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-1.webp" alt="" width="100%" height="auto">
+					<div class="swiper-slide-content-wrapper">
+						<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
+						<a href="#" title="Some title">Learn more</a>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="swiper-slide">
-			<div class="swiper-slide-wrapper">
-				<h3>Body Scan</h3>
-				<img src="http://localhost:8888/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-2.webp" alt="" width="100%" height="auto">
-				<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
-				<a href="#" title="Some title">Learn more</a>
+			<div class="swiper-slide">
+				<div class="swiper-slide-wrapper">
+					<h3>Body Scan</h3>
+					<img src="http://goforward-block.local/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-1.webp" alt="" width="100%" height="auto">
+					<div class="swiper-slide-content-wrapper">
+						<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
+						<a href="#" title="Some title">Learn more</a>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="swiper-slide">
-			<div class="swiper-slide-wrapper">
-				<h3>Body Scan</h3>
-				<img src="http://localhost:8888/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-2.webp" alt="" width="100%" height="auto">
-				<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
-				<a href="#" title="Some title">Learn more</a>
-			</div>
-		</div>
-		<div class="swiper-slide">
-			<div class="swiper-slide-wrapper">
-				<h3>Body Scan</h3>
-				<img src="http://localhost:8888/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-2.webp" alt="" width="100%" height="auto">
-				<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
-				<a href="#" title="Some title">Learn more</a>
+			<div class="swiper-slide">
+				<div class="swiper-slide-wrapper">
+					<h3>Body Scan</h3>
+					<img src="http://goforward-block.local/wp-content/uploads/2024/02/Body_Scan_-_Desktop_3x-1.webp" alt="" width="100%" height="auto">
+					<div class="swiper-slide-content-wrapper">
+						<p>Assess your risk for diseases like heart disease and diabetes, and track changes over time.</p>
+						<a href="#" title="Some title">Learn more</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
 	<!-- If we need navigation buttons -->
 	<div class="swiper-button-prev"></div>
 	<div class="swiper-button-next"></div>
 </div>
-</div>
 
 <?php
-echo '<pre>';
-var_dump( $attributes );
-echo '<pre>';
+// echo '<pre>';
+// var_dump( $attributes );
+// echo '<pre>';
 ?>

@@ -26,19 +26,20 @@ const swiper = new Swiper(
     direction: 'horizontal',
     loop: false,
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 16,
     breakpoints: {
+        480: {
+            slidesPerView: 2,
+        },
         640: {
             slidesPerView: 2,
-            spaceBetween: 0,
         },
         768: {
             slidesPerView: 3,
-            spaceBetween: 0,
         },
         1024: {
             slidesPerView: 4,
-            spaceBetween: 0,
+            spaceBetween: 16,
         },
     },
 

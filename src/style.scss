@@ -10,12 +10,12 @@
     --wp-block-create-block-swiper-block-link-color-alt: #13396c;
 }
 
-.wp-block-create-block-swiper-block .swiper {
-    width: 100%;
+.wp-block-create-block-swiper-block {
+    position: relative;
 }
 
-.wp-block-create-block-swiper-block .swiper .swiper-wrapper {
-    gap: 16px;
+.wp-block-create-block-swiper-block .swiper {
+    width: 100%;
 }
 
 .wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide {
@@ -24,8 +24,7 @@
     position: relative;
     height: auto;
     transition: transform 250ms cubic-bezier(0.2, 0.8, 0.4, 1) 0s;
-    padding: 12px;
-    width: 260px !important;
+    // width: 260px !important;
 }
 
 .wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide:hover {
@@ -35,15 +34,14 @@
 }
 
 .wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper {
-    background-color: white;
-    border-radius: 0.5rem;
-    overflow: hidden;
+    padding: 12px;
 }
 
 .wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper img {
     display: flex;
     max-width: 100%;
     height: auto;
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper h3 {
@@ -60,6 +58,11 @@
     bottom: auto;
     left: calc(1rem + 12px);
     border: 0;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper .swiper-slide-content-wrapper {
+    background-color: white;
+    border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper p {
@@ -117,4 +120,45 @@
 
 .wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper a:hover:after {
     transform: translateX(0.5rem);
+}
+
+.wp-block-create-block-swiper-block .swiper-button-next.swiper-button-disabled,
+.wp-block-create-block-swiper-block .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+}
+
+.wp-block-create-block-swiper-block .swiper-button-next,
+.wp-block-create-block-swiper-block .swiper-button-prev {
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    color: var(--wp-block-create-block-swiper-block-link-color);
+    border-radius: 6rem;
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.wp-block-create-block-swiper-block .swiper-button-next:hover,
+.wp-block-create-block-swiper-block .swiper-button-prev:hover {
+    background-color: #0d2648;
+    color: white;
+    border-radius: 6rem;
+}
+
+.wp-block-create-block-swiper-block .swiper-button-next:after,
+.wp-block-create-block-swiper-block .swiper-button-prev:after {
+    font-size: 1.25rem;
+    text-align: center;
+    width: 20px;
+}
+
+@media screen and (min-width: 1400px) {
+    .wp-block-create-block-swiper-block .swiper-button-next {
+        right: var(--swiper-navigation-sides-offset, -4rem);
+    }
+
+    .wp-block-create-block-swiper-block .swiper-button-prev {
+        left: var(--swiper-navigation-sides-offset, -4rem);
+    }
 }
