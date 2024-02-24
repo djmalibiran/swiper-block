@@ -46,7 +46,9 @@
 }
 
 .wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper h3 {
-  width: 50%;
+  word-break: keep-all;
+  width: -moz-min-content;
+  width: min-content;
   height: -moz-fit-content;
   height: fit-content;
   overflow-wrap: break-word;

@@ -45,7 +45,8 @@
 }
 
 .wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper h3 {
-    width: 50%;
+    word-break: keep-all;
+    width: min-content;
     height: fit-content;
     overflow-wrap: break-word;
     letter-spacing: -0.85px;
