@@ -6,25 +6,6 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-swiper-block {
-  padding: 1px;
-}
-
-.wp-block-create-block-swiper-block .swiper-wrapper {
-  display: flex;
-  gap: 40px;
-  padding: 1rem;
-}
-
-.wp-block-create-block-swiper-block .swiper-slide {
-  width: 260px !important;
-}
-
-.wp-block-create-block-swiper-block .components-card {
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
 .wp-block-create-block-swiper-block .components-card__media {
   display: flex;
   justify-content: center;
@@ -67,13 +48,35 @@
 .wp-block-create-block-swiper-block .delete-slide {
   position: absolute;
   z-index: 9999;
-  top: -16px;
+  top: 1rem;
   right: 0;
   bottom: auto;
   left: auto;
   background-color: white;
   border-radius: 100px;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 12px;
+}
+
+.wp-block-create-block-swiper-block .swiper-button-next,
+.wp-block-create-block-swiper-block .swiper-button-prev {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 12px;
+  background-color: red;
+  color: white;
+  opacity: 1;
+  top: var(--swiper-navigation-top-offset, 35%);
+}
+
+.wp-block-create-block-swiper-block .swiper-button-next.swiper-button-disabled,
+.wp-block-create-block-swiper-block .swiper-button-prev.swiper-button-disabled {
+  opacity: 0.35;
+}
+
+.wp-block-create-block-swiper-block .swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, 0px);
+}
+
+.wp-block-create-block-swiper-block .swiper-button-next {
+  right: var(--swiper-navigation-sides-offset, 0px);
 }
 /*!************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/swiper/swiper.css ***!

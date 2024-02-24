@@ -98,10 +98,13 @@ function Edit({
   }, "Add Card"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.Swiper, {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
     // install Swiper modules
-    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.A11y],
-    spaceBetween: 0,
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.A11y],
+    spaceBetween: 16,
     slidesPerView: 4,
     navigation: true,
+    pagination: {
+      clickable: true
+    },
     scrollbar: {
       draggable: true
     },
