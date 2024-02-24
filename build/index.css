@@ -28,10 +28,16 @@
 
 .wp-block-create-block-swiper-block .components-card__media {
   display: flex;
+  justify-content: center;
 }
 
 .wp-block-create-block-swiper-block .components-card__media button {
   padding: 0;
+  height: auto;
+  background-color: #1f262d;
+  min-height: 80px;
+  color: white;
+  width: 100%;
 }
 
 .wp-block-create-block-swiper-block .components-card__header h3 {
