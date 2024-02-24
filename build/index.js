@@ -47,51 +47,52 @@ function Edit({
   setAttributes
 }) {
   const {
-    cards
+    swiper_cards
   } = attributes;
   const handleTitleChange = (newTitle, index) => {
-    const updatedCards = [...cards];
+    const updatedCards = [...swiper_cards];
     updatedCards[index].title = newTitle;
     setAttributes({
-      cards: updatedCards
+      swiper_cards: updatedCards
     });
   };
   const handleContentChange = (newContent, index) => {
-    const updatedCards = [...cards];
+    const updatedCards = [...swiper_cards];
     updatedCards[index].content = newContent;
     setAttributes({
-      cards: updatedCards
+      swiper_cards: updatedCards
     });
   };
   const handleImageChange = (newImage, index) => {
-    const updatedCards = [...cards];
+    const updatedCards = [...swiper_cards];
     updatedCards[index].image = newImage;
     setAttributes({
-      cards: updatedCards
+      swiper_cards: updatedCards
     });
   };
   const handleLinkChange = (newLink, index) => {
-    const updatedCards = [...cards];
+    const updatedCards = [...swiper_cards];
     updatedCards[index].link = newLink;
     setAttributes({
-      cards: updatedCards
+      swiper_cards: updatedCards
     });
   };
   const handleDeleteSlide = index => {
-    const updatedCards = [...cards];
+    const updatedCards = [...swiper_cards];
     updatedCards.splice(index, 1); // Remove the card at the specified index
     setAttributes({
-      cards: updatedCards
+      swiper_cards: updatedCards
     });
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    variant: "primary",
     onClick: () => {
       const newCard = {
         title: '',
         content: ''
       };
       setAttributes({
-        cards: [...cards, newCard]
+        swiper_cards: [...swiper_cards, newCard]
       });
     }
   }, "Add Card"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.Swiper, {
@@ -106,7 +107,7 @@ function Edit({
     },
     onSwiper: swiper => console.log(swiper),
     onSlideChange: () => console.log('slide change')
-  }, cards.map((card, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
+  }, swiper_cards.map((card, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
     key: index
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => handleDeleteSlide(index),
@@ -11414,7 +11415,7 @@ SwiperSlide.displayName = 'SwiperSlide';
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/swiper-block","version":"0.1.0","title":"Swiper Block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","attributes":{"cards":{"type":"array","default":[{"title":"Demo Card","content":"Please add a new card and delete this one.","image":{"url":"https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg"}}],"items":{"type":"object","properties":{"title":{"type":"string"},"content":{"type":"string"},"image":{"type":"object","properties":{"id":{"type":"number"},"url":{"type":"string"},"alt":{"type":"string"}}},"link":{"type":"string"}}}}},"supports":{"html":false},"textdomain":"swiper-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/swiper-block","version":"0.1.0","title":"Swiper Block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","attributes":{"swiper_cards":{"type":"array","default":[{"title":"Demo Card","content":"Please add a new card and delete this one.","image":{"url":"https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg"}}],"items":{"type":"object","properties":{"title":{"type":"string"},"content":{"type":"string"},"image":{"type":"object","properties":{"id":{"type":"number"},"url":{"type":"string"},"alt":{"type":"string"}}},"link":{"type":"string"}}}}},"supports":{"html":false},"textdomain":"swiper-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

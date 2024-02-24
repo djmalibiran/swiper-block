@@ -15,36 +15,36 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { cards } = attributes;
+	const { swiper_cards } = attributes;
 
 	const handleTitleChange = (newTitle, index) => {
-		const updatedCards = [...cards];
+		const updatedCards = [...swiper_cards];
 		updatedCards[index].title = newTitle;
-		setAttributes({ cards: updatedCards });
+		setAttributes({ swiper_cards: updatedCards });
 	};
 
 	const handleContentChange = (newContent, index) => {
-		const updatedCards = [...cards];
+		const updatedCards = [...swiper_cards];
 		updatedCards[index].content = newContent;
-		setAttributes({ cards: updatedCards });
+		setAttributes({ swiper_cards: updatedCards });
 	};
 
 	const handleImageChange = (newImage, index) => {
-		const updatedCards = [...cards];
+		const updatedCards = [...swiper_cards];
 		updatedCards[index].image = newImage;
-		setAttributes({ cards: updatedCards });
+		setAttributes({ swiper_cards: updatedCards });
 	};
 
 	const handleLinkChange = (newLink, index) => {
-		const updatedCards = [...cards];
+		const updatedCards = [...swiper_cards];
 		updatedCards[index].link = newLink;
-		setAttributes({ cards: updatedCards });
+		setAttributes({ swiper_cards: updatedCards });
 	};
 
 	const handleDeleteSlide = (index) => {
-		const updatedCards = [...cards];
+		const updatedCards = [...swiper_cards];
 		updatedCards.splice(index, 1); // Remove the card at the specified index
-		setAttributes({ cards: updatedCards });
+		setAttributes({ swiper_cards: updatedCards });
 	};
 
 	return (
@@ -52,13 +52,14 @@ export default function Edit({ attributes, setAttributes }) {
 			<InspectorControls>
 				<PanelBody>
 					<Button
+						variant="primary"
 						onClick={() => {
 							const newCard = {
 								title: '',
 								content: ''
 							};
 							setAttributes({
-								cards: [...cards, newCard]
+								swiper_cards: [...swiper_cards, newCard]
 							});
 						}}
 					>
@@ -78,7 +79,7 @@ export default function Edit({ attributes, setAttributes }) {
 				onSlideChange={() => console.log('slide change')}
 			>
 				{
-					cards.map((card, index) => (
+					swiper_cards.map((card, index) => (
 						<SwiperSlide key={index}>
 							<Button
 								onClick={() => handleDeleteSlide(index)}

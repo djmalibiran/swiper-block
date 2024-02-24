@@ -8,7 +8,7 @@
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "attributes": {
-    "cards": {
+    "swiper_cards": {
       "type": "array",
       "default": [
         {
