@@ -7,5 +7,119 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+:root {
+  --wp-block-create-block-swiper-block-link-color: #1f6fe5;
+  --wp-block-create-block-swiper-block-link-color-alt: #13396c;
+}
+
+.wp-block-create-block-swiper-block .swiper {
+  width: 100%;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper {
+  gap: 16px;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+  transition: transform 250ms cubic-bezier(0.2, 0.8, 0.4, 1) 0s;
+  padding: 12px;
+  width: 260px !important;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper img {
+  display: flex;
+  max-width: 100%;
+  height: auto;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper h3 {
+  width: 50%;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow-wrap: break-word;
+  letter-spacing: -0.85px;
+  line-height: 1.19;
+  margin: 0;
+  color: white;
+  position: absolute;
+  top: calc(1.77rem + 12px);
+  right: auto;
+  bottom: auto;
+  left: calc(1rem + 12px);
+  border: 0;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper p {
+  color: #1f262d;
+  margin: 0;
+  padding: 1rem;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--wp-block-create-block-swiper-block-link-color);
+  padding: 0 1rem 1rem 1rem;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper a::before {
+  content: "";
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper a:active,
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper a:hover {
+  background: transparent;
+  border-color: transparent;
+  color: var(--wp-block-create-block-swiper-block-link-color-alt);
+  text-decoration: underline;
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper a:focus {
+  outline: var(--wp-block-create-block-swiper-block-link-color) solid 3px;
+  color: var(--wp-block-create-block-swiper-block-link-color);
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper a::after {
+  content: "";
+  display: inline-flex;
+  position: relative;
+  transition: all 150ms ease;
+  width: 1rem;
+  height: 1rem;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716px%27 height=%2716px%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M6 5.122 12.877 12 6 18.878 8.123 21l8.998-9-8.998-9z%27 fill=%27%231f6fe5%27%3E%3C/path%3E%3C/svg%3E");
+}
+
+.wp-block-create-block-swiper-block .swiper .swiper-wrapper .swiper-slide .swiper-slide-wrapper a:hover:after {
+  transform: translateX(0.5rem);
+}
 
 /*# sourceMappingURL=style-index.css.map*/

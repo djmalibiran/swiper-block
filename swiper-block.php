@@ -26,5 +26,19 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function swiper_block_swiper_block_block_init() {
 	register_block_type( __DIR__ . '/build' );
+
+	// Enqueue Swiper CSS
+	wp_enqueue_style('swiper-styles', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), array(), false, 'screen');
+
+	// Enqueue Swiper JS
+	wp_enqueue_script(
+		'swiper-scripts',
+		'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+		array(),
+		array(),
+		array(
+			'in_footer' => false
+			)
+	);
 }
 add_action( 'init', 'swiper_block_swiper_block_block_init' );
