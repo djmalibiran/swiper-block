@@ -6,6 +6,70 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-create-block-swiper-block {
+  border: 1px dotted #f00;
+  padding: 1rem;
+}
+
+.wp-block-create-block-swiper-block .swiper-wrapper {
+  display: flex;
+  gap: 40px;
+  padding: 1rem;
+}
+
+.wp-block-create-block-swiper-block .swiper-slide {
+  width: 260px !important;
+}
+
+.wp-block-create-block-swiper-block .components-card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.wp-block-create-block-swiper-block .components-card__media {
+  display: flex;
+}
+
+.wp-block-create-block-swiper-block .components-card__media button {
+  padding: 0;
+}
+
+.wp-block-create-block-swiper-block .components-card__header h3 {
+  margin: 0;
+}
+
+.wp-block-create-block-swiper-block .components-card__body {
+  padding: 1rem;
+}
+
+.wp-block-create-block-swiper-block .components-card__body p {
+  color: #1f262d;
+  margin: 0;
+}
+
+.wp-block-create-block-swiper-block .components-card__footer {
+  border: 0;
+  padding-top: 0;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.wp-block-create-block-swiper-block .components-card__footer .components-base-control {
+  width: 100%;
+}
+
+.wp-block-create-block-swiper-block .delete-slide {
+  position: absolute;
+  z-index: 9999;
+  top: -16px;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  background-color: white;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 12px;
+}
 /*!************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/swiper/swiper.css ***!
   \************************************************************************************************************************************************************************************/

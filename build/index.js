@@ -63,6 +63,20 @@ function Edit({
       cards: updatedCards
     });
   };
+  const handleImageChange = (newImage, index) => {
+    const updatedCards = [...cards];
+    updatedCards[index].image = newImage;
+    setAttributes({
+      cards: updatedCards
+    });
+  };
+  const handleLinkChange = (newLink, index) => {
+    const updatedCards = [...cards];
+    updatedCards[index].link = newLink;
+    setAttributes({
+      cards: updatedCards
+    });
+  };
   const handleDeleteSlide = index => {
     const updatedCards = [...cards];
     updatedCards.splice(index, 1); // Remove the card at the specified index
@@ -94,7 +108,35 @@ function Edit({
     onSlideChange: () => console.log('slide change')
   }, cards.map((card, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_6__.SwiperSlide, {
     key: index
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Card, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CardMedia, null, "Test"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CardHeader, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    onClick: () => handleDeleteSlide(index),
+    title: "Delete Slide",
+    className: "delete-slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "16",
+    height: "16",
+    fill: "currentColor",
+    viewBox: "0 0 16 16"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+    d: "M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Card, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CardMedia, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: newImage => handleImageChange(newImage, index),
+    allowedTypes: ['image'],
+    value: card.image ? card.image.id : '',
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open
+    }, card.image ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: card.image.url,
+      alt: card.image.alt,
+      style: {
+        width: '100%',
+        height: 'auto'
+      }
+    }) : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Upload Image', 'swiper-block'))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CardHeader, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h3",
     value: card.title,
     allowedFormats: ['core/bold', 'core/italic'],
@@ -108,9 +150,11 @@ function Edit({
     allowedFormats: ['core/bold', 'core/italic'],
     onChange: newContent => handleContentChange(newContent, index),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card Content...')
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CardFooter, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    onClick: () => handleDeleteSlide(index)
-  }, "Delete Slide")))))));
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CardFooter, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    value: card.link,
+    onChange: newLink => handleLinkChange(newLink, index),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Learn More Link...')
+  })))))));
 }
 
 /***/ }),
@@ -11370,7 +11414,7 @@ SwiperSlide.displayName = 'SwiperSlide';
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/swiper-block","version":"0.1.0","title":"Swiper Block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{"attributes":{"cards":[{"title":"Card 1","content":"This is card 1"},{"title":"Card 2","content":"This is card 2"}]}},"attributes":{"cards":{"type":"array","default":[],"properties":{"title":{"type":"string"},"content":{"type":"string"}}}},"supports":{"html":false},"textdomain":"swiper-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/swiper-block","version":"0.1.0","title":"Swiper Block","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","attributes":{"cards":{"type":"array","default":[{"title":"Demo Card","content":"Please add a new card and delete this one.","image":{"url":"https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg"}}],"items":{"type":"object","properties":{"title":{"type":"string"},"content":{"type":"string"},"image":{"type":"object","properties":{"id":{"type":"number"},"url":{"type":"string"},"alt":{"type":"string"}}},"link":{"type":"string"}}}}},"supports":{"html":false},"textdomain":"swiper-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

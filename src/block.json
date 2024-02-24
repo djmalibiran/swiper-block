@@ -7,30 +7,44 @@
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
-	"example": {
-		"attributes": {
-			"cards": [
-				{
-					"title": "Card 1",
-					"content": "This is card 1"
-				},
-				{
-					"title": "Card 2",
-					"content": "This is card 2"
-				}
-			]
-		}
-	},
 	"attributes": {
 		"cards": {
 			"type": "array",
-			"default": [],
-			"properties": {
-				"title": {
-					"type": "string"
-				},
-				"content": {
-					"type": "string"
+			"default": [
+				{
+					"title": "Demo Card",
+					"content": "Please add a new card and delete this one.",
+					"image": {
+						"url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg"
+					}
+				}
+			],
+			"items": {
+				"type": "object",
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"content": {
+						"type": "string"
+					},
+					"image": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "number"
+							},
+							"url": {
+								"type": "string"
+							},
+							"alt": {
+								"type": "string"
+							}
+						}
+					},
+					"link": {
+						"type": "string"
+					}
 				}
 			}
 		}
